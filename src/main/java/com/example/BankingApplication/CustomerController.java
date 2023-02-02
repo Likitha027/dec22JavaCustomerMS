@@ -1,12 +1,10 @@
 package com.example.BankingApplication;
-
 import com.example.BankingApplication.Exception.ResourceNotFoundException;
 import com.example.BankingApplication.Repository.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 @RestController
