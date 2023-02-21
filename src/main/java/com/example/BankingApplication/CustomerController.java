@@ -25,6 +25,8 @@ public class CustomerController {
     @GetMapping("/all")
     public List<CustomerMS> getAllCustomers() {
 
+        LOGGER.log(Level.INFO, "Executing CustomerMS");
+        LOGGER.info("Checking all Customer");
         return cRepo.findAll();
     }
 
@@ -32,7 +34,7 @@ public class CustomerController {
     public ResponseEntity<CustomerMS> getCustomer(@PathVariable Integer CustomerId) {
         CustomerMS customerMS = cRepo.findById(CustomerId).orElseThrow(() -> new ResourceNotFoundException("customer not exist with Id:" + CustomerId));
         LOGGER.log(Level.INFO, "Executing CustomerMS");
-        LOGGER.info("Checking Customer By Id");
+        LOGGER.info("Checking Customer By Id " + CustomerId);
         return ResponseEntity.ok(customerMS);
     }
 
